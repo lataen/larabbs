@@ -28,3 +28,8 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+Route::get('/users/{users}', 'UsersController@show')->name('users.show');
+Route::get('/users/{users}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{users}', 'UsersController@update')->name('users.update');
