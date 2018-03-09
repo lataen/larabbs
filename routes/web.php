@@ -30,6 +30,5 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
-Route::get('/users/{users}', 'UsersController@show')->name('users.show');
-Route::get('/users/{users}/edit', 'UsersController@edit')->name('users.edit');
-Route::patch('/users/{users}', 'UsersController@update')->name('users.update');
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
