@@ -31,4 +31,3 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
-
